@@ -7,7 +7,7 @@ Etec Professor Camargo Aranha · São Paulo, SP
 
 ## 📌 Sobre
 
-Repositório da disciplina **Programação Web III**, com projetos e exercícios desenvolvidos em **Laravel** utilizando o **Laravel Herd** como ambiente de desenvolvimento local.
+Repositório da disciplina **Programação Web III**, com projetos e exercícios desenvolvidos em um ambiente de desenvolvimento local.
 
 ---
 

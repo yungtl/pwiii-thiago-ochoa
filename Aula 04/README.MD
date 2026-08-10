@@ -1,150 +1,314 @@
-# Laravel com Herd
+# Guia de Inicialização de Projetos Spring Boot
 
+Este repositório contém um passo a passo completo para criar e inicializar uma aplicação Java utilizando o **Spring Boot** através de diferentes ferramentas e IDEs.
 
-[![Laravel](https://img.shields.io/badge/Laravel-Framework-FF2D20?style=flat&logo=laravel&logoColor=white)](https://laravel.com)
-[![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?style=flat&logo=php&logoColor=white)](https://php.net)
-[![Herd](https://img.shields.io/badge/Ambiente-Laravel_Herd-FF2D20?style=flat&logo=laravel&logoColor=white)](https://herd.laravel.com)
+## 🛠️ Pré-requisitos Gerais
 
----
+Antes de iniciar por qualquer método, certifique-se de ter instalado em sua máquina:
 
-## 📌 Sobre
-
-Repositório da disciplina **Programação Web III**, com projetos e exercícios desenvolvidos em **Laravel** utilizando o **Laravel Herd** como ambiente de desenvolvimento local.
+* **JDK (Java Development Kit):** versão 17 ou superior instalada e configurada nas variáveis de ambiente (`JAVA_HOME`).
+* **Gerenciador de Dependências:** Maven ou Gradle.
 
 ---
 
-## 🐘 O que é o Laravel Herd?
+## 🌐 1. Criando pelo Navegador (Spring Initializr)
 
-O **Laravel Herd** é um ambiente de desenvolvimento nativo e extremamente rápido para projetos **Laravel e PHP**. Diferente de soluções como XAMPP ou Docker, o Herd roda diretamente no sistema operacional — sem máquinas virtuais, sem containers, sem configuração manual.
+A forma mais universal e oficial de gerar um projeto Spring Boot.
 
-> Mais de **50.000 desenvolvedores** usam o Herd diariamente para criar aplicações web.
+1. Acesse o site oficial: [start.spring.io](https://start.spring.io/).
 
----
+2. Configure as opções do projeto:
 
-## ✅ Por que usar o Laravel Herd?
+   * **Project:** Maven ou Gradle.
+   * **Language:** Java.
+   * **Spring Boot:** selecione a versão estável mais recente (evite versões com *SNAPSHOT* ou *M*).
+   * **Project Metadata:**
 
-| Benefício | Descrição |
-|---|---|
-| ⚡ **Zero configuração** | Após instalar, você já está pronto para desenvolver. Sem editar arquivos de configuração manualmente. |
-| 🚀 **Alta performance** | Usa binários estáticos para PHP e Nginx — resulta em até **35% mais velocidade nos testes** e **100% mais velocidade nas requisições web** em comparação ao XAMPP. |
-| 🔄 **Troca de versão PHP** | Suporta PHP 7.4 até 8.5. Você pode alternar versões em segundos, ou fixar uma versão por projeto. |
-| 🔒 **HTTPS local nativo** | SSL integrado para rodar suas aplicações locais com `https://` sem configuração extra. |
-| 📦 **Tudo incluso** | Já vem com PHP, Nginx, Node.js, Composer, Laravel Installer e Expose — disponíveis direto no terminal. |
-| 🌐 **Domínios `.test` automáticos** | Todo projeto na pasta `~/Herd` ganha automaticamente um domínio `nomedoprojeto.test` no navegador. |
-| 📧 **Serviço de e-mail local** | Captura todos os e-mails enviados pela aplicação em caixas de entrada separadas por projeto — ideal para testes. |
-| 🖥️ **Windows e macOS** | Disponível nativamente para ambos os sistemas operacionais. |
+     * **Group:** `com.exemplo` (ou o pacote da sua instituição/empresa).
+     * **Artifact:** `demo` (nome do projeto).
+     * **Packaging:** Jar.
+     * **Java:** 17 ou 21.
 
----
+3. Adicione as dependências iniciais no botão **ADD DEPENDENCIES...**.
 
-## 🆓 Herd Free vs Herd Pro
+   Exemplos:
 
-| Recurso | Free | Pro |
-|---|---|---|
-| PHP, Nginx, Node.js | ✅ | ✅ |
-| Composer + Laravel Installer | ✅ | ✅ |
-| Domínios `.test` automáticos | ✅ | ✅ |
-| HTTPS local | ✅ | ✅ |
-| Troca de versão PHP | ✅ | ✅ |
-| Bancos de dados (MySQL, PostgreSQL, Redis, etc.) | ❌ | ✅ |
-| Debugging com Xdebug | ❌ | ✅ |
-| Gerenciamento de serviços (filas, cache) | ❌ | ✅ |
-| Integração com Laravel Forge (deploy 1 clique) | ❌ | ✅ |
+   * Spring Web
+   * Spring Boot DevTools
+   * Lombok
 
-> Para os projetos desta disciplina, a versão **gratuita** é suficiente.
+4. Clique em **GENERATE** para baixar o arquivo `.zip`.
+
+5. Extraia o arquivo baixado em uma pasta de sua preferência.
+
+6. Abra a pasta extraída na sua IDE favorita.
 
 ---
 
-## 📋 Pré-requisitos
+## 💙 2. Criando pelo VS Code
 
-- Windows 10/11 ou macOS 12+
-- [Laravel Herd](https://herd.laravel.com) instalado
+Para criar projetos diretamente no Visual Studio Code, utilize as extensões oficiais da Microsoft/VMware.
 
-> O Herd já inclui PHP, Composer, Nginx e o Laravel Installer. Não é necessário instalar nada separadamente.
+### Configuração Inicial
+
+1. Abra o VS Code.
+
+2. Vá em **Extensions** (`Ctrl + Shift + X`).
+
+3. Instale os seguintes pacotes:
+
+   * **Extension Pack for Java**
+   * **Spring Boot Extension Pack**
+
+### Passo a Passo
+
+1. Abra o **Command Palette** (`Ctrl + Shift + P` ou `F1`).
+
+2. Digite e selecione:
+
+   ```text
+   Spring Initializr: Create a Maven Project
+   ```
+
+   Ou, caso prefira Gradle:
+
+   ```text
+   Spring Initializr: Create a Gradle Project
+   ```
+
+3. Escolha a versão do **Spring Boot**.
+
+4. Selecione a linguagem: **Java**.
+
+5. Insira o **Group ID**, por exemplo:
+
+   ```text
+   com.exemplo
+   ```
+
+6. Insira o **Artifact ID**, por exemplo:
+
+   ```text
+   meu-projeto
+   ```
+
+7. Selecione o tipo de empacotamento: **JAR**.
+
+8. Escolha a versão do Java, por exemplo:
+
+   ```text
+   17
+   ```
+
+9. Marque as dependências desejadas, por exemplo:
+
+   ```text
+   Spring Web
+   ```
+
+   Pressione `Enter` para confirmar.
+
+10. Escolha a pasta onde o projeto será salvo e clique em **Generate into this folder**.
+
+11. Clique em **Open** no aviso que aparecer no canto inferior direito.
 
 ---
 
-## 🚀 Como criar um projeto Laravel com o Herd
+## 🚀 3. Criando pelo IntelliJ IDEA
 
-> 💡 **Uma das grandes vantagens do Herd é que você não precisa usar o terminal para nada.** Criar projetos, gerenciar sites e trocar versões do PHP são feitos direto pela interface gráfica do aplicativo.
+> **Nota:** o suporte nativo via interface gráfica do Spring Initializr requer o **IntelliJ IDEA Ultimate**. Na versão **Community**, utilize o fluxo alternativo indicado abaixo.
 
-### 1. Instale o Laravel Herd
+### Opção A: IntelliJ IDEA Ultimate
 
-Acesse [herd.laravel.com](https://herd.laravel.com), baixe o instalador para o seu sistema e siga as etapas de instalação.
+1. Abra o IntelliJ IDEA e clique em **New Project**.
 
-### 2. Crie um novo projeto pela interface do Herd
+2. No menu lateral esquerdo, selecione **Spring Initializr**.
 
-1. Clique no **ícone do Herd** na barra de tarefas (Windows) ou barra de menu (macOS)
-2. Vá em **"Sites"** → **"Create new Site"** (ou **"New Laravel Project"**)
-3. Dê um nome ao projeto
-4. Escolha a **versão do PHP** desejada
-5. Clique em **"Create"**
+3. Configure:
 
-O Herd cria o projeto automaticamente dentro da pasta `~/Herd` e já configura tudo — sem nenhum comando no terminal. ✅
+   * Nome do projeto;
+   * Localização;
+   * Linguagem: Java;
+   * Gerenciador: Maven ou Gradle.
 
-### 3. Acesse o projeto no navegador
+4. Clique em **Next**.
 
-Após criar, o projeto já estará disponível automaticamente em:
+5. Escolha a versão do Spring Boot e marque as dependências desejadas.
 
-```
-http://nome-do-projeto.test
-```
+6. Clique em **Create**.
 
-O Herd gerencia o servidor Nginx internamente — não é necessário rodar `php artisan serve` nem iniciar nenhum serviço manualmente.
+### Opção B: IntelliJ IDEA Community
 
-### 4. Gerencie seus projetos pela interface
+1. Gere o projeto compactado `.zip` através do site [start.spring.io](https://start.spring.io/).
 
-Ainda pelo painel do Herd você pode, para cada projeto:
+2. Abra o IntelliJ IDEA.
 
-- 🌐 **Abrir no navegador** com um clique
-- 📁 **Abrir a pasta** do projeto no explorador de arquivos
-- 💻 **Abrir o terminal** já posicionado na pasta correta (quando necessário)
-- 🔄 **Trocar a versão do PHP** usada pelo projeto
-- 🔒 **Ativar HTTPS** local com um clique
+3. Clique em **Open** e selecione a pasta extraída.
 
-### 5. Estrutura do projeto criado
+4. Aguarde o IntelliJ carregar o arquivo `pom.xml` ou `build.gradle` e baixar as dependências automaticamente.
 
-```
-nome-do-projeto/
-├── app/
-│   ├── Http/
-│   │   └── Controllers/   # Controladores da aplicação
-│   └── Models/            # Modelos Eloquent
-├── database/
-│   └── migrations/        # Migrations do banco de dados
-├── resources/
-│   └── views/             # Views Blade (HTML + PHP)
-├── routes/
-│   └── web.php            # Definição das rotas web
-├── public/                # Ponto de entrada público (index.php)
-├── .env                   # Configurações de ambiente (banco, app, etc.)
-└── artisan                # CLI do Laravel
-```
+---
 
-### 6. Comandos úteis do Artisan
+## 🍃 4. Criando pelo Eclipse / Spring Tool Suite (STS)
+
+Se estiver utilizando o **Spring Tool Suite 4** ou o Eclipse com o plugin **Spring Tools** instalado:
+
+1. Acesse o menu superior:
+
+   **File > New > Spring Starter Project**
+
+2. Confirme a URL do serviço:
+
+   ```text
+   https://start.spring.io
+   ```
+
+3. Preencha os campos:
+
+   * `Name`
+   * `Group`
+   * `Artifact`
+   * `Java Version`
+   * `Type` (Maven/Gradle)
+
+4. Clique em **Next**.
+
+5. Selecione a versão do Spring Boot e busque as dependências necessárias.
+
+6. Clique em **Finish**.
+
+---
+
+## 💻 5. Criando via Linha de Comando (Spring Boot CLI)
+
+Caso tenha a ferramenta de linha de comando do Spring instalada (`spring-cli`), é possível criar o projeto diretamente pelo terminal.
+
+### Criando um projeto Maven
 
 ```bash
-# Rodar as migrations (criar tabelas no banco)
-php artisan migrate
+spring init --build=maven --dependencies=web,devtools --java-version=17 meu-projeto
+```
 
-# Criar um Controller
-php artisan make:controller NomeController
+Após a execução, navegue até a pasta criada:
 
-# Criar um Model
-php artisan make:model NomeModel
-
-# Criar uma Migration
-php artisan make:migration create_tabela_table
-
-# Listar todas as rotas registradas
-php artisan route:list
-
-# Limpar cache da aplicação
-php artisan cache:clear
-php artisan config:clear
+```bash
+cd meu-projeto
 ```
 
 ---
 
+## ▶️ Como Executar a Aplicação
+
+Independentemente da ferramenta utilizada para criar o projeto, existem diferentes formas de executar a aplicação.
+
+### Via Terminal
+
+Execute os comandos a partir da **raiz do projeto**.
+
+#### Projetos Maven
+
+No Linux/macOS:
+
+```bash
+./mvnw spring-boot:run
+```
+
+No Windows Command Prompt:
+
+```cmd
+mvnw.cmd spring-boot:run
+```
+
+#### Projetos Gradle
+
+No Linux/macOS:
+
+```bash
+./gradlew bootRun
+```
+
+No Windows Command Prompt:
+
+```cmd
+gradlew.bat bootRun
+```
+
+### Via IDE
+
+Localize a classe principal que possui a anotação `@SpringBootApplication`.
+
+Normalmente, ela estará localizada em um caminho semelhante a:
+
+```text
+src/main/java/com/exemplo/demo/DemoApplication.java
+```
+
+Clique com o botão direito sobre a classe e selecione:
+
+* **Run** para executar;
+* **Debug** para executar em modo de depuração.
+
+---
+
+## 🌍 Acessando a Aplicação
+
+Após iniciar corretamente, a aplicação estará disponível, por padrão, no endereço:
+
+```text
+http://localhost:8080
+```
+
+Abra esse endereço no navegador para acessar a aplicação.
+
+---
+
+## 📁 Estrutura Básica do Projeto
+
+Um projeto Spring Boot gerado pelo Spring Initializr normalmente apresenta uma estrutura semelhante a:
+
+```text
+meu-projeto/
+├── .mvn/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── exemplo/
+│   │   │           └── demo/
+│   │   │               └── DemoApplication.java
+│   │   └── resources/
+│   │       ├── static/
+│   │       ├── templates/
+│   │       └── application.properties
+│   └── test/
+│       └── java/
+├── .gitignore
+├── mvnw
+├── mvnw.cmd
+└── pom.xml
+```
+
+A estrutura pode variar de acordo com o gerenciador de dependências, configurações e dependências selecionadas durante a criação do projeto.
+
+---
+
+## ✅ Resumo
+
+Você pode inicializar um projeto Spring Boot utilizando:
+
+| Método       | Ferramenta                  |
+| ------------ | --------------------------- |
+| 🌐 Navegador | Spring Initializr           |
+| 💙 IDE       | VS Code                     |
+| 🚀 IDE       | IntelliJ IDEA               |
+| 🍃 IDE       | Eclipse / Spring Tool Suite |
+| 💻 Terminal  | Spring Boot CLI             |
+
+Depois de criar o projeto, basta configurar as dependências necessárias, executar a aplicação e acessar:
+
+```text
+http://localhost:8080
+```
 ## 👩‍💻 Autora
 
 Desenvolvido por **Sara Coni**  
