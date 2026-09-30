@@ -1,2 +1,2 @@
-# pamii-thiago-ochoa
-Programação Mobile 
+# pwiii-thiago-ochoa
+Programação Web
